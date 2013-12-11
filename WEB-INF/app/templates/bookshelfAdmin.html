@@ -1,0 +1,17 @@
+{% extends "bookshelf.html" %}
+
+{% block adminActions %}
+
+<hr>
+
+<p><a href="{{logoutURI}}">Log out</a></p>
+
+
+<form method="POST" action="./{{ bookshelfId }}">
+   <label for="title">Title:</label>
+   <input type="text" value="" id="title" name="title">
+
+   <input type="submit" value="Add book">
+</form>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<h1>{{title}}</h1>
+
+<h2>Books</h2>
+<ul>
+{% for book in books %}
+   <li>{{ book.title }}</li>
+{% endfor %}
+</ul>
+
+
+   {% block adminActions %}
+   {% endblock %}
+
+{% endblock %}

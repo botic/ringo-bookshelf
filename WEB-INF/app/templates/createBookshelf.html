@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<h1>Hallo {{username}}</h1>
+
+<p><a href="{{logoutURI}}">Log out</a></p>
+
+
+<form method="POST" action="./createBookshelf">
+   <label for="title">Title:</label>
+   <input type="text" value="" id="title" name="title">
+
+   <input type="submit" value="Save">
+</form>
+
+{% endblock %}
