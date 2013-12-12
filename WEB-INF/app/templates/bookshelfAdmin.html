@@ -1,17 +1,95 @@
 {% extends "bookshelf.html" %}
 
+{% block bookLoop %}
+   {% for book in books %}
+      <li class="large-12 columns">
+         {{ book.title }}
+         <a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}" class="button tiny">Add Cover</a>
+      </li>
+   {% endfor %}
+{% endblock %}
+
 {% block adminActions %}
 
-<hr>
-
-<p><a href="{{logoutURI}}">Log out</a></p>
-
-
 <form method="POST" action="./{{ bookshelfId }}">
-   <label for="title">Title:</label>
-   <input type="text" value="" id="title" name="title">
+   <div class="panel row">
+      <div class="large-8 columns">
 
-   <input type="submit" value="Add book">
+         <div class="row">
+            <div class="large-12 columns">
+               <h4>Add to Bookshelf</h4>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <label for="title">Title <small>required</small></label>
+               <input type="text" value="" id="title" name="title" required />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <label for="author">Author <small>required</small></label>
+               <input type="text" value="" id="author" name="author" required />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <label for="publisher">Publisher</label>
+               <input type="text" value="" id="publisher" name="publisher" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="medium-3 columns">
+               <label for="year">Year</label>
+               <input type="number" value="" id="year" name="year" step="1" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <label for="edition">Edition</label>
+               <input type="text" value="" id="edition" name="edition" />
+            </div>
+         </div>
+
+         <div class="row">
+
+            <div class="medium-4 columns">
+               <label for="isbn13">ISBN-13</label>
+               <input type="text" value="" id="isbn13" name="isbn13" />
+            </div>
+
+            <div class="medium-4 columns">
+               <label for="isbn10">ISBN-10</label>
+               <input type="text" value="" id="isbn10" name="isbn10" />
+            </div>
+
+            <div class="medium-4 columns">
+               <label for="issn">ISSN</label>
+               <input type="text" value="" id="issn" name="issn" />
+            </div>
+
+         </div>
+
+         <div class="row">
+            <div class="medium-6 columns">
+               <label for="dimensions">Dimensions / Weight</label>
+               <input type="text" value="" id="dimensions" name="dimensions" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="submit" value="Add book" class="button small" />
+            </div>
+         </div>
+
+      </div>
+   </div>
 </form>
 
 {% endblock %}

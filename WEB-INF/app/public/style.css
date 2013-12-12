@@ -1,0 +1,11 @@
+main {
+   margin: 1.5em 0 2em 0;
+}
+
+footer {
+   margin-top: 2em;
+}
+
+#logout {
+   text-align: right;
+}

@@ -1,9 +1,22 @@
 {% extends "index.html" %}
 
 {% block main %}
+<div class="row">
+   <div class="small-6 columns">Welcome {{username}}</div>
+   <div class="small-6 columns" id="logout"><a href="{{logoutURI}}">Logout</a></div>
+</div>
 
-<h1>Hallo {{username}}</h1>
 
-<p><a href="{{logoutURI}}">Log out</a></p>
+<div class="row">
+   <div class="large-12 columns">
+      <h5>My Bookshelfs</h5>
+   </div>
+</div>
+
+<ul class="row">
+   {% for shelf in shelfs %}
+      <li class="large-12 columns"><a href="/bookshelf/{{ shelf.id }}">{{ shelf.title }}</a></li>
+   {% endfor %}
+</ul>
 
 {% endblock %}
