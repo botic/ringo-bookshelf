@@ -2,16 +2,26 @@
 
 {% block main %}
 
-<h1>Hallo {{username}}</h1>
+<div class="row">
+   <div class="medium-12 columns">
+      <h3>New Bookshelf</h3>
+   </div>
+</div>
 
-<p><a href="{{logoutURI}}">Log out</a></p>
+<form method="POST" action="/createBookshelf" autocomplete="off">
 
+   <div class="row">
+      <div class="medium-6 columns">
+         <label for="title" >Title:</label>
+         <input type="text" value="" id="title" name="title" />
+      </div>
+   </div>
 
-<form method="POST" action="./createBookshelf">
-   <label for="title">Title:</label>
-   <input type="text" value="" id="title" name="title">
-
-   <input type="submit" value="Save">
+   <div class="row">
+      <div class="medium-6 columns">
+         <input type="submit" value="Create" class="button" />
+      </div>
+   </div>
 </form>
 
 {% endblock %}
