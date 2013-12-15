@@ -160,6 +160,7 @@ app.get("/bookshelf/:id", function(req, id) {
 
    return response.html(env.getTemplate("bookshelf.html").render({
       title: bookshelf.getProperty("title"),
+      bookshelfId: id,
       books: booksArray
    }));
 });
