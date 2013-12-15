@@ -1,4 +1,11 @@
-{% extends "index.html" %}
+{% extends "frontpage.html" %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+   <li><a href="/">Home</a></li>
+   <li class="current">{{ title }}</li>
+</ul>
+{% endblock %}
 
 {% block main %}
 
@@ -8,23 +15,37 @@
    </div>
 </div>
 
-
 <div class="row">
-   <div class="large-12 columns">
-      <h3>Books</h3>
-   </div>
+<div class="large-12 columns">
+{% block adminActions %}{% endblock %}
+</div>
 </div>
 
-<ul class="row">
-{% block bookLoop %}
-   {% for book in books %}
-      <li class="large-12 columns">{{ book.title }}</li>
-   {% endfor %}
-{% endblock %}
-</ul>
-
-
-   {% block adminActions %}
-   {% endblock %}
+<div class="row">
+<div class="large-12 columns">
+   <table>
+      <thead>
+         <tr>
+            <th width="200">Cover</th><th width="600">Title</th><th width="170"></th>
+         </tr>
+      </thead>
+      <tbody>
+      {% block bookLoop %}
+         {% for book in books %}
+            <tr>
+               <td>
+                  <a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}">
+                     <img src="{{ book.coverUrl }}=s200" alt="" title="" />
+                  </a>
+               </td>
+               <td><a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}">{{ book.title }}</a></td>
+               <td></td>
+            </tr>
+         {% endfor %}
+      {% endblock %}
+      </tbody>
+   </table>
+</div>
+</div>
 
 {% endblock %}

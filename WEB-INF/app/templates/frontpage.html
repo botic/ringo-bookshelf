@@ -1,10 +1,20 @@
 {% extends "index.html" %}
 
+{% block username %}
+   {% if username %}
+   <small>{{ username }}</small>
+   {% endif %}
+{% endblock %}
+
+{% block globalcontrol %}
+   {% if logoutURI %}
+      <a href="{{logoutURI}}" class="button tiny radius">Sign out</a>
+   {% else %}
+      <a href="/" class="button tiny radius">Sign in</a>
+   {% endif %}
+{% endblock %}
+
 {% block main %}
-<div class="row">
-   <div class="small-6 columns">Welcome {{username}}</div>
-   <div class="small-6 columns" id="logout"><a href="{{logoutURI}}">Logout</a></div>
-</div>
 
 
 <div class="row">
@@ -13,10 +23,14 @@
    </div>
 </div>
 
-<ul class="row">
-   {% for shelf in shelfs %}
-      <li class="large-12 columns"><a href="/bookshelf/{{ shelf.id }}">{{ shelf.title }}</a></li>
-   {% endfor %}
-</ul>
+<div class="row">
+   <div class="large-12 columns">
+      <ul>
+         {% for shelf in shelfs %}
+            <li><a href="/bookshelf/{{ shelf.id }}">{{ shelf.title }}</a></li>
+         {% endfor %}
+      </ul>
+   </div>
+</div>
 
 {% endblock %}

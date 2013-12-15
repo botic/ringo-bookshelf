@@ -1,0 +1,41 @@
+{% extends "frontpage.html" %}
+
+{% block main %}
+
+<div class="row">
+   <div class="large-12 columns">
+      <h2>{{ title }}</h2>
+   </div>
+</div>
+
+<form method="POST" action="{{ uploadUrl }}" enctype="multipart/form-data">
+
+   <input type="hidden" name="bookId" value="{{ book.id }}" />
+
+   <div class="panel row">
+      <div class="large-8 columns">
+
+         <div class="row">
+            <div class="large-12 columns">
+               <h4>Upload Cover</h4>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="file" name="coverFile" accept="image/gif, image/jpeg, image/png" required />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="submit" value="Add Cover" class="button small" />
+            </div>
+         </div>
+
+      </div>
+   </div>
+</form>
+
+
+{% endblock %}

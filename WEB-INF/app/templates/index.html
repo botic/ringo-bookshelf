@@ -5,12 +5,22 @@
    <link rel="stylesheet" href="/static/normalize.css" />
    <link rel="stylesheet" href="/static/foundation.min.css" />
    <link rel="stylesheet" href="/static/style.css" />
+
    <script src="/static/modernizr.js"></script>
+
 </head>
 <body>
 
-   <header class="row">
-      <h1 class="large-12 columns">Bookshelf</h1>
+   <header>
+      <div class="row">
+         <h1 class="medium-10 columns">Bookshelf {% block username %}{% endblock %}</h1>
+         <span class="medium-2 columns" id="globalcontrol">{% block globalcontrol %}{% endblock %}</span>
+      </div>
+      <div class="row">
+         <div class="large-12 columns">
+         {% block breadcrumbs %}{% endblock%}
+         </div>
+      </div>
    </header>
 
    <main>
@@ -18,8 +28,16 @@
    </main>
 
    <footer class="row">
-      <div class="large-12 columns">RingoJS Bookshelf</div>
+      <div class="large-12 columns">
+         <div class="footerText">RingoJS Bookshelf</div>
+      </div>
    </footer>
+
+   {% block modals %}{% endblock %}
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+   <script src="/static/foundation.min.js"></script>
+   <script> $(document).foundation(); </script>
 
 </body>
 </html>

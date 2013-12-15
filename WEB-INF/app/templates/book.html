@@ -1,0 +1,70 @@
+{% extends "frontpage.html" %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+   <li><a href="/">Home</a></li>
+   <li><a href="/bookshelf/{{ bookshelf.id }}">{{ bookshelf.title }}</a></li>
+   <li class="current">{{ book.title }}</li>
+</ul>
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+   <div class="medium-3 columns">
+      <img src="{{ book.coverUrl }}=s220" alt="Cover Image" title="" />
+   </div>
+
+   <div class="medium-9 columns">
+      <h2>{{ book.title }}</h2>
+      <dl>
+         {% if book.author %}
+         <dt>Author</dt>
+         <dd>{{ book.author }}</dd>
+         {% endif %}
+
+         {% if book.publisher %}
+         <dt>Publisher</dt>
+         <dd>{{ book.publisher }}</dd>
+         {% endif %}
+
+         {% if book.year %}
+         <dt>Year</dt>
+         <dd>{{ book.year }}</dd>
+         {% endif %}
+
+         {% if book.edition %}
+         <dt>Edition</dt>
+         <dd>{{ book.edition }}</dd>
+         {% endif %}
+
+         {% if book.isbn13 %}
+         <dt>ISBN-13</dt>
+         <dd>{{ book.isbn13 }}</dd>
+         {% endif %}
+
+         {% if book.isbn10 %}
+         <dt>ISBN-10</dt>
+         <dd>{{ book.isbn10 }}</dd>
+         {% endif %}
+
+         {% if book.issn %}
+         <dt>ISSN</dt>
+         <dd>{{ book.issn }}</dd>
+         {% endif %}
+
+         {% if book.dimensions %}
+         <dt>Dimensions</dt>
+         <dd>{{ book.dimensions }}</dd>
+         {% endif %}
+      </dl>
+   </div>
+</div>
+
+<div class="row">
+   <div class="large-9 columns large-offset-3">
+      <a class="button" href="/bookshelf/{{ bookshelf.id }}">Back to {{ bookshelf.title }}</a>
+   </div>
+</div>
+
+{% endblock %}

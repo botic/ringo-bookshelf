@@ -2,22 +2,31 @@
 
 {% block bookLoop %}
    {% for book in books %}
-      <li class="large-12 columns">
-         {{ book.title }}
-         <a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}" class="button tiny">Add Cover</a>
+      <tr>
+         <td>
+            <a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}">
+               <img src="{{ book.coverUrl }}=s200" alt="" title="" />
+            </a>
+         </td>
+         <td><a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}">{{ book.title }}</a></td>
+         <td><a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}/upload" class="button tiny">Set Cover</a></td>
       </li>
    {% endfor %}
 {% endblock %}
 
 {% block adminActions %}
+<a href="#" data-reveal-id="modaladmin" class="tiny radius button">Add Book</a>
+{% endblock %}
 
+{% block modals %}
+<div id="modaladmin" class="reveal-modal" data-reveal>
 <form method="POST" action="./{{ bookshelfId }}">
-   <div class="panel row">
+   <div class="row">
       <div class="large-8 columns">
 
          <div class="row">
             <div class="large-12 columns">
-               <h4>Add to Bookshelf</h4>
+               <h3>Add to Bookshelf</h3>
             </div>
          </div>
 
@@ -92,4 +101,7 @@
    </div>
 </form>
 
+<a class="close-reveal-modal">&#215;</a>
+
+</div>
 {% endblock %}
