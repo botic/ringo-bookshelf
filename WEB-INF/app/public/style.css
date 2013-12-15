@@ -7,6 +7,10 @@ main {
    font-weight: 300;
 }
 
+.bookshelfAdmin {
+   top: 0.5rem;
+}
+
 footer {
    padding: 2rem 0 4rem 0;
 }
@@ -20,8 +24,8 @@ footer {
 }
 
 @media only screen and (min-width: 40.063em) {
-#globalcontrol {
-   text-align: right;
-   padding-top: 1.25rem;
-}
+   #globalcontrol {
+      text-align: right;
+      padding-top: 1.25rem;
+   }
 }
