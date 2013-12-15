@@ -80,7 +80,7 @@ app.get("/", function(req) {
       }
 
       return response.html(env.getTemplate("frontpage.html").render({
-         title: "Hallo",
+         title: "Bookshelf - " + credentials.principal.getName(),
          username: credentials.principal.getName(),
          logoutURI: credentials.logoutURI,
          shelfs: shelfArray
@@ -95,7 +95,7 @@ app.get("/createBookshelf", function(req) {
 
    if (credentials.isLoggedIn) {
       return response.html(env.getTemplate("createBookshelf.html").render({
-         title: "Hallo",
+         title: "Create Bookshelf",
          username: credentials.principal.getName(),
          logoutURI: credentials.logoutURI
       }));
