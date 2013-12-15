@@ -35,9 +35,11 @@
          {% for book in books %}
             <tr>
                <td>
+                  {% if book.coverUrl %}
                   <a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}">
                      <img src="{{ book.coverUrl }}=s200" alt="" title="" />
                   </a>
+                  {% endif %}
                </td>
                <td><a href="/bookshelf/{{ bookshelfId }}/{{ book.id }}">{{ book.title }}</a></td>
                <td></td>
