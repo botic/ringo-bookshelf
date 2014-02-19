@@ -5,6 +5,11 @@
    <target name="deps">
       <mkdir dir="WEB-INF/lib" />
       <get
+         src="http://search.maven.org/remotecontent?filepath=com/google/appengine/appengine-api-1.0-sdk/1.8.8/appengine-api-1.0-sdk-1.8.8.jar"
+         verbose="true"
+         dest="WEB-INF/lib"
+      />
+      <get
          src="http://repo1.maven.org/maven2/org/jruby/extras/jaffl/0.5.12/jaffl-0.5.12.jar"
          verbose="true"
          dest="WEB-INF/lib"
