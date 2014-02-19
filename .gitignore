@@ -1,6 +1,4 @@
 
 WEB-INF/lib/*
-WEB-INF/modules/*
-WEB-INF/packages/*
 
 WEB-INF/appengine-generated

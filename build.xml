@@ -1,0 +1,31 @@
+<project name="ringo-bookshelf" basedir=".">
+   <description>Load dependencies</description>
+
+
+   <target name="deps">
+      <mkdir dir="WEB-INF/lib" />
+      <get
+         src="http://repo1.maven.org/maven2/org/jruby/extras/jaffl/0.5.12/jaffl-0.5.12.jar"
+         verbose="true"
+         dest="WEB-INF/lib"
+      />
+      <get
+         src="http://repo1.maven.org/maven2/org/jruby/ext/posix/jnr-posix/1.1.9/jnr-posix-1.1.9.jar"
+         verbose="true"
+         dest="WEB-INF/lib"
+      />
+      <get
+         src="https://oss.sonatype.org/content/repositories/snapshots/org/mozilla/rhino/1.7R5-SNAPSHOT/rhino-1.7R5-20120629.144839-4.jar"
+         verbose="true"
+         dest="WEB-INF/lib/rhino-1.7R5-SNAPSHOT.jar"
+      />
+      <get
+         src="https://oss.sonatype.org/service/local/repositories/snapshots/content/org/ringojs/ringojs/0.10.1-SNAPSHOT/ringojs-0.10.1-20131220.124404-1.jar"
+         verbose="true"
+         dest="WEB-INF/lib/ringo-core.jar"
+      />
+   </target>
+
+
+
+</project>
